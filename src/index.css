@@ -12,6 +12,8 @@
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
 
 
