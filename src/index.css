@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@import url("https://fonts.google.com/specimen/Montserrat");
+
+
+
+
+@theme {
+  --font-sans: "Montserrat", sans-serif;
+}
+
+@utility bg-glass {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.35);
+}
+
+
+@utility bg-darkBG {
+  background-image: url('./assets/Images/black wallpaper.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@utility bg-lightBGF {
+  background-image: url('./assets/Images/white wallpaper.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
