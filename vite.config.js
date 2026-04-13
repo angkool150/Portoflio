@@ -10,8 +10,4 @@ export default defineConfig({
       plugins: [],
     },
   },
-  build: {
-    cssMinify: 'lightningcss',
-    minify: 'esbuild',
-  },
 })
