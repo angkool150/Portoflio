@@ -2,6 +2,7 @@ import { useState } from 'react'
 import NavBar from './assets/Components/NabBar/NavBar.jsx';
 import Home from './assets/Components/Home/Home.jsx';
 import About from './assets/Components/About/About.jsx';
+import Skills from './assets/Components/Skills/Skills.jsx';
 
 
 
@@ -16,6 +17,7 @@ function App() {
       <NavBar isOpen={isOpen} setIsOpen={setIsOpen} />
       <Home isOpen={isOpen} />
       <About />
+      <Skills />
     </div>
   )
 }
