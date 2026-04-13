@@ -5,19 +5,19 @@
   --font-sans: "Montserrat", sans-serif;
 }
 
+.bg-glass {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(40px) !important;
+  -webkit-backdrop-filter: blur(40px) !important;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.35) !important;
+  transform: translateZ(0) !important;
+  -webkit-transform: translateZ(0) !important;
+  isolation: isolate !important;
+  will-change: backdrop-filter !important;
+  position: relative !important;
+}
 
 @layer utilities {
-  .bg-glass {
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    isolation: isolate;
-    will-change: backdrop-filter;
-    position: relative;
-  }
 
 
   .bg-darkBG {
