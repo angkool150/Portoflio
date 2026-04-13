@@ -10,7 +10,14 @@ function NavBar({ isOpen, setIsOpen }) {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className='fixed top-0 left-0 w-screen h-16 bg-glass border-b border-white flex items-center justify-between z-50'
+            className='fixed top-0 left-0 w-screen h-16 border-b border-white flex items-center justify-between z-50'
+            style={{
+                backgroundColor: isOpen ? 'rgba(0, 0, 0, 0.85)' : 'rgba(255, 255, 255, 0.15)',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
+                boxShadow: '0 4px 20px rgba(255, 255, 255, 0.35)',
+                transition: 'background-color 0.3s ease'
+            }}
         >
             <span className='ml-5 border-1 border-white rounded-full'>
                 <Logo src={WhiteLogo} alt="Logo" size={40} />
