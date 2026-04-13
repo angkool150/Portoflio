@@ -6,12 +6,13 @@
 }
 
 
-@utility bg-glass {
-  background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
-  isolation: isolate;
+@layer utilities {
+  .bg-glass {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
+  }
 }
 
 @utility bg-darkBG {

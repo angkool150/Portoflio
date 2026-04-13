@@ -27,7 +27,7 @@ function SkillsCards({ icon, icon2, title, description, iconSize = 40, icon2Size
             <div className='flex items-start justify-center flex-col h-full w-full p-4 sm:pl-4'>
                 <div className='flex gap-2'>
                     <motion.div
-                        className='w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] border-2 border-white rounded-xl flex items-center justify-center '
+                        className='w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] border-2 border-white rounded-xl flex items-center justify-center overflow-hidden'
                         whileHover={{ rotate: 360 }}
                         transition={{ duration: 0.6 }}
                     >
@@ -35,7 +35,7 @@ function SkillsCards({ icon, icon2, title, description, iconSize = 40, icon2Size
                     </motion.div>
                     {icon2 && (
                         <motion.div
-                            className='w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] border-2 border-white rounded-xl flex items-center justify-center'
+                            className='w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] border-2 border-white rounded-xl flex items-center justify-center overflow-hidden'
                             whileHover={{ rotate: 360 }}
                             transition={{ duration: 0.6 }}
                         >
