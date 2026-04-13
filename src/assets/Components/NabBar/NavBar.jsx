@@ -52,7 +52,12 @@ function NavBar({ isOpen, setIsOpen }) {
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className='fixed top-16 left-0 w-full bg-glass border-b border-white md:hidden overflow-hidden z-40'
+                        className='fixed top-16 left-0 w-full border-b border-white md:hidden overflow-hidden z-40'
+                        style={{
+                            backgroundColor: 'rgba(0, 0, 0, 0.85)',
+                            backdropFilter: 'blur(20px)',
+                            WebkitBackdropFilter: 'blur(20px)'
+                        }}
                     >
                         <div className='flex flex-col gap-4 p-6 font-medium text-white text-[16px]'>
                             <h4 className='cursor-pointer hover:text-gray-300 transition-colors'>Home</h4>
