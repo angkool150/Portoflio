@@ -3,6 +3,7 @@ import NavBar from './assets/Components/NabBar/NavBar.jsx';
 import Home from './assets/Components/Home/Home.jsx';
 import About from './assets/Components/About/About.jsx';
 import Skills from './assets/Components/Skills/Skills.jsx';
+import Footer from './assets/Components/Footer/Footer.jsx';
 
 
 
@@ -18,6 +19,7 @@ function App() {
       <Home isOpen={isOpen} />
       <About />
       <Skills />
+      <Footer />
     </div>
   )
 }
