@@ -1,14 +1,14 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaHeart } from 'react-icons/fa'
+import { FaGithub, FaFacebook, FaTiktok, FaEnvelope, FaHeart } from 'react-icons/fa'
 
 function Footer() {
     const currentYear = new Date().getFullYear()
 
     const socialLinks = [
         { icon: FaGithub, url: '#', label: 'GitHub' },
-        { icon: FaLinkedin, url: '#', label: 'LinkedIn' },
-        { icon: FaTwitter, url: '#', label: 'Twitter' },
+        { icon: FaFacebook, url: '#', label: 'Facebook' },
+        { icon: FaTiktok, url: '#', label: 'TikTok' },
         { icon: FaEnvelope, url: '#', label: 'Email' }
     ]
 
