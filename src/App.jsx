@@ -5,6 +5,8 @@ import About from './assets/Components/About/About.jsx';
 import Skills from './assets/Components/Skills/Skills.jsx';
 import Footer from './assets/Components/Footer/Footer'
 import Pubmats from './assets/Components/Pubmats/Pubmats.jsx';
+import Sublimation from './assets/Components/Sublimation/Sublimation.jsx';
+import Clips from './assets/Components/Videos/clips.jsx'
 
 
 
@@ -22,8 +24,8 @@ function App() {
       <About />
       <Skills />
       <Pubmats />
-
-
+      <Sublimation />
+      <Clips />
       <Footer />
     </div>
   )
