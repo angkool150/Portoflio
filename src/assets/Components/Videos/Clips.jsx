@@ -1,13 +1,28 @@
 import React from 'react'
 import VideoCard from './VideoCard.jsx'
 import data from '../../../data/videoClips.json'
+import { motion } from 'framer-motion';
 
 
 function Clips() {
     return (
         <div className='w-full min-h-screen text-white py-10 px-4'>
             <div className='max-w-7xl mx-auto'>
-                <h4 className='text-center font-bold text-3xl md:text-[50px] mb-4'>Edited Videos</h4>
+                <motion.h1
+                    className='font-bold text-3xl md:text-5xl lg:text-[50px] font-sans cursor-pointer text-center pb-5'
+                    initial={{ textShadow: "0 0 0px rgba(255,255,255,0)" }}
+                    whileHover={{
+                        scale: 1.1,
+                        textShadow: "0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.6)"
+                    }}
+                    transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 20
+                    }}
+                >
+                    Edited Videos
+                </motion.h1>
                 <h1 className='text-center text-sm md:text-base mb-10'>Carefully edited videos that combine storytelling, smooth transitions, and visual impact.</h1>
 
             </div>
