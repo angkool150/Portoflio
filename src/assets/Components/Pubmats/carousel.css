@@ -1,0 +1,49 @@
+.carousel-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    width: fit-content;
+}
+
+.carousel-track>* {
+    flex-shrink: 0;
+}
+
+.carousel-left-to-right {
+    animation: scrollLeftToRight 40s linear infinite;
+}
+
+.carousel-right-to-left {
+    animation: scrollRightToLeft 40s linear infinite;
+}
+
+/* Pause animation on hover */
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollLeftToRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrollRightToLeft {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

@@ -14,7 +14,7 @@ import { motion } from "framer-motion"
 
 function Skills() {
     return (
-        <div className='w-screen min-h-screen font-sans py-10 px-4'>
+        <div className='w-full min-h-screen font-sans py-10 px-4'>
             <div className='text-white flex items-center justify-center flex-col mb-8 md:mb-12'>
                 <motion.h1
                     className='font-bold text-3xl md:text-5xl lg:text-[50px] font-sans cursor-pointer'
