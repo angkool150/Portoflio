@@ -39,7 +39,7 @@ function ImageModal({ src, onClose }) {
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
                     transition={{ type: 'spring', damping: 25 }}
-                    className='relative max-w-5xl max-h-[90vh] w-full'
+                    className='relative max-w-3xl max-h-[70vh] w-full'
                     onClick={(e) => e.stopPropagation()}
                 >
                     <img
