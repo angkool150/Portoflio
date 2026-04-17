@@ -38,9 +38,9 @@ function App() {
       {!loading && (
         <div className='relative min-h-screen'>
           {/* Fixed background */}
-          <div className={`fixed inset-0 z-0 bg-lightBG`} />
+          <div className={`fixed inset-0 ${isLight ? 'bg-lightBG' : 'bg-darkBG'}`} style={{ zIndex: -1 }} />
 
-          <div className='relative z-10'>
+          <div className='relative'>
             <NavBar isOpen={isOpen} setIsOpen={setIsOpen} />
             <Home isOpen={isOpen} />
             <About />
