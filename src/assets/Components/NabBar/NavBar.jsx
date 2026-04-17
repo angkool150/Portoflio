@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import WhiteLogo from '../../Images/AngkoolLogo/Logo-White.svg'
 import BlackLogo from '../../Images/AngkoolLogo/Logo-Black.svg'
 import Logo from './logo.jsx'
-import { FiSun, FiMenu, FiX } from "react-icons/fi"
+import { FiSun, FiMoon, FiMenu, FiX } from "react-icons/fi"
 import { useTheme } from '../context/ThemeContext.jsx'
 
 function NavBar({ isOpen, setIsOpen }) {
@@ -42,7 +42,7 @@ function NavBar({ isOpen, setIsOpen }) {
                     onClick={toggleTheme}
                     className='border-white border-2 w-10 h-10 flex items-center justify-center rounded-full text-white hover:bg-white hover:text-black transition-colors'
                 >
-                    <FiSun size={20} />
+                    {isLight ? <FiMoon size={20} /> : <FiSun size={20} />}
                 </button>
             </div>
 
@@ -54,7 +54,7 @@ function NavBar({ isOpen, setIsOpen }) {
                     onClick={toggleTheme}
                     className='border-white border-2 w-10 h-10 flex items-center justify-center rounded-full text-white hover:bg-white hover:text-black transition-colors'
                 >
-                    <FiSun size={20} />
+                    {isLight ? <FiMoon size={20} /> : <FiSun size={20} />}
                 </button>
 
                 <button
