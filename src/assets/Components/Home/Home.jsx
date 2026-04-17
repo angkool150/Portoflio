@@ -5,6 +5,7 @@ import BigLogo from '../../Images/AngkoolLogo/Angkool-Works-and-Effects.svg'
 function Home({ isOpen }) {
     return (
         <motion.div
+            id='home'
             animate={{ paddingTop: isOpen ? '220px' : '0px' }}
             transition={{ duration: 0.3 }}
             className='px-6 sm:px-12 md:px-20 lg:px-32 xl:px-85 pt-20 h-screen bg-black/30'

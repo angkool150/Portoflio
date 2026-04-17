@@ -14,13 +14,12 @@ import { motion } from "framer-motion"
 
 function Skills() {
     return (
-        <div className='w-full min-h-screen font-sans py-10 px-4'>
-            <div className='text-white flex items-center justify-center flex-col mb-8 md:mb-12'>
+        <div id='skills' className='w-full min-h-screen font-sans py-20 md:py-10 px-4 flex flex-col justify-center '>
+            <div className='text-white flex items-center justify-center flex-col mb-8 md:mb-12 mt-16 md:mt-0'>
                 <motion.h1
                     className='font-bold text-3xl md:text-5xl lg:text-[50px] font-sans cursor-pointer'
                     initial={{ textShadow: "0 0 0px rgba(255,255,255,0)" }}
                     whileHover={{
-                        scale: 1.1,
                         textShadow: "0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.6)"
                     }}
                     transition={{

@@ -9,14 +9,13 @@ function Pubmats() {
     const [selectedImage, setSelectedImage] = useState(null)
 
     return (
-        <div className='w-full min-h-screen py-10 px-4'>
-            <div className='max-w-7xl mx-auto'>
+        <div id='pubmats' className='w-full min-h-screen py-10 px-4 flex flex-col justify-center items-center'>
+            <div className='max-w-6xl mx-auto w-full'>
 
                 <motion.h1
-                    className='font-bold text-3xl md:text-5xl lg:text-[50px] font-sans cursor-pointer text-center text-white mb-10'
+                    className='font-bold text-3xl md:text-5xl lg:text-[50px] font-sans cursor-pointer text-center text-white mb-2 mt-15'
                     initial={{ textShadow: "0 0 0px rgba(255,255,255,0)" }}
                     whileHover={{
-                        scale: 1.1,
                         textShadow: "0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.6)"
                     }}
                     transition={{
@@ -30,7 +29,7 @@ function Pubmats() {
                 <h1 className='text-white text-center mb-10 text-sm md:text-base'>Creative publication materials designed to inform, engage, and stand out.</h1>
 
                 {/* Carousel Container */}
-                <div className='bg-glass border-2 border-white/30 rounded-3xl p-6 md:p-10 backdrop-blur-lg'>
+                <div className='bg-glass border-2 border-white/30 rounded-3xl p-4 md:p-6 backdrop-blur-lg'>
                     {/* Top Row - Left to Right */}
                     <div className='carousel-container mb-6 overflow-x-hidden overflow-y-visible'>
                         <div className='carousel-track carousel-left-to-right'>

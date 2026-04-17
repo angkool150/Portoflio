@@ -5,8 +5,8 @@ import cert from '../../../data/certificates.json'
 
 function Certificates() {
     return (
-        <div className='w-full min-h-screen overflow-x-hidden py-10'>
-            <div className='text-white px-4'>
+        <div id='certificates' className='w-full min-h-screen overflow-x-hidden py-20 md:py-10 flex flex-col items-center justify-center'>
+            <div className='text-white px-4 mt-16 md:mt-0'>
                 <div className='h-30 flex items-center justify-center'>
                     <motion.h1
                         className='font-bold text-3xl md:text-5xl lg:text-[50px] font-sans cursor-pointer text-center pb-5'

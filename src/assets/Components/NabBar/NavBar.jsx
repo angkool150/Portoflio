@@ -25,13 +25,13 @@ function NavBar({ isOpen, setIsOpen }) {
 
             {/* Desktop Menu */}
             <div className='hidden md:flex gap-6 items-center font-medium text-white text-[16px] mr-5'>
-                <h4 className='cursor-pointer hover:text-gray-300 transition-colors'>Home</h4>
-                <h4 className='cursor-pointer hover:text-gray-300 transition-colors'>About</h4>
-                <h4 className='cursor-pointer hover:text-gray-300 transition-colors'>Skills</h4>
-                <h4 className='cursor-pointer hover:text-gray-300 transition-colors'>Pubmats</h4>
-                <h4 className='cursor-pointer hover:text-gray-300 transition-colors'>Sublimation</h4>
-                <h4 className='cursor-pointer hover:text-gray-300 transition-colors'>Videos</h4>
-                <h4 className='cursor-pointer hover:text-gray-300 transition-colors'>Certificates</h4>
+                <a href='#home' className='cursor-pointer hover:text-gray-300 transition-colors'>Home</a>
+                <a href='#about' className='cursor-pointer hover:text-gray-300 transition-colors'>About</a>
+                <a href='#skills' className='cursor-pointer hover:text-gray-300 transition-colors'>Skills</a>
+                <a href='#pubmats' className='cursor-pointer hover:text-gray-300 transition-colors'>Pubmats</a>
+                <a href='#sublimation' className='cursor-pointer hover:text-gray-300 transition-colors'>Sublimation</a>
+                <a href='#videos' className='cursor-pointer hover:text-gray-300 transition-colors'>Videos</a>
+                <a href='#certificates' className='cursor-pointer hover:text-gray-300 transition-colors'>Certificates</a>
 
                 <button className='border-white border-2 w-10 h-10 flex items-center justify-center rounded-full text-white'>
                     <FiSun size={20} />
@@ -67,13 +67,13 @@ function NavBar({ isOpen, setIsOpen }) {
                         }}
                     >
                         <div className='flex flex-col gap-4 p-6 font-medium text-white text-[16px]'>
-                            <h4 className='cursor-pointer hover:text-gray-300 transition-colors'>Home</h4>
-                            <h4 className='cursor-pointer hover:text-gray-300 transition-colors'>About</h4>
-                            <h4 className='cursor-pointer hover:text-gray-300 transition-colors'>Skills</h4>
-                            <h4 className='cursor-pointer hover:text-gray-300 transition-colors'>Pubmats</h4>
-                            <h4 className='cursor-pointer hover:text-gray-300 transition-colors'>Sublimation</h4>
-                            <h4 className='cursor-pointer hover:text-gray-300 transition-colors'>Videos</h4>
-                            <h4 className='cursor-pointer hover:text-gray-300 transition-colors'>Certificates</h4>
+                            <a href='#home' onClick={() => setIsOpen(false)} className='cursor-pointer hover:text-gray-300 transition-colors'>Home</a>
+                            <a href='#about' onClick={() => setIsOpen(false)} className='cursor-pointer hover:text-gray-300 transition-colors'>About</a>
+                            <a href='#skills' onClick={() => setIsOpen(false)} className='cursor-pointer hover:text-gray-300 transition-colors'>Skills</a>
+                            <a href='#pubmats' onClick={() => setIsOpen(false)} className='cursor-pointer hover:text-gray-300 transition-colors'>Pubmats</a>
+                            <a href='#sublimation' onClick={() => setIsOpen(false)} className='cursor-pointer hover:text-gray-300 transition-colors'>Sublimation</a>
+                            <a href='#videos' onClick={() => setIsOpen(false)} className='cursor-pointer hover:text-gray-300 transition-colors'>Videos</a>
+                            <a href='#certificates' onClick={() => setIsOpen(false)} className='cursor-pointer hover:text-gray-300 transition-colors'>Certificates</a>
                         </div>
                     </motion.div>
                 )}

@@ -6,13 +6,12 @@ import { motion } from 'framer-motion';
 
 function Clips() {
     return (
-        <div className='w-full min-h-screen text-white py-10 px-4'>
-            <div className='max-w-7xl mx-auto'>
+        <div id='videos' className='w-full min-h-screen text-white px-4 flex flex-col justify-center items-center py-20 md:py-10'>
+            <div className='max-w-7xl mx-auto mt-16 md:mt-0'>
                 <motion.h1
                     className='font-bold text-3xl md:text-5xl lg:text-[50px] font-sans cursor-pointer text-center pb-5'
                     initial={{ textShadow: "0 0 0px rgba(255,255,255,0)" }}
                     whileHover={{
-                        scale: 1.1,
                         textShadow: "0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.6)"
                     }}
                     transition={{

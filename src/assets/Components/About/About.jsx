@@ -9,7 +9,7 @@ import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa6";
 
 function About() {
     return (
-        <div className='text-white w-full flex flex-col items-center justify-center min-h-screen py-20 px-6 sm:px-12  relative overflow-hidden'>
+        <div id='about' className='text-white w-full flex flex-col items-center justify-center min-h-screen py-20 px-6 sm:px-12  relative overflow-hidden'>
 
             {/* Mobile & MD Photo - visible only below lg */}
             <motion.div

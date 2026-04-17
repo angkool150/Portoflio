@@ -54,7 +54,7 @@ function CertCards({ cert, imagePosition = '50% 50%' }) {
                             />
                             <button
                                 onClick={() => setIsOpen(false)}
-                                className='absolute -top-12 right-0 w-12 h-12 bg-red-500/80 hover:bg-red-600 rounded-full flex items-center justify-center text-white transition-colors shadow-lg'
+                                className='absolute -top-12 right-0 w-12 h-12 bg-glass active:bg-white hover:cursor-pointer  border-2 border-white rounded-full  flex items-center justify-center text-white transition-colors shadow-lg'
                             >
                                 <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M6 18L18 6M6 6l12 12' />
