@@ -36,7 +36,7 @@ function VideoCard({ video }) {
                     </div>
                 </div>
                 <div className='p-4 bg-gradient-to-b from-transparent to-black/20'>
-                    <h1 className='text-white font-semibold text-lg truncate'>{video.title}</h1>
+                    <h1 className='text-white font-semibold text-md truncate'>{video.title}</h1>
                 </div>
             </motion.div>
 

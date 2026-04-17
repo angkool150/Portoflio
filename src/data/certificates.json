@@ -1,0 +1,24 @@
+{
+    "Certificates": [
+        {
+            "id": 1,
+            "title": "Computer System Servicing NC2",
+            "url": "https://res.cloudinary.com/dvodxjuwq/image/upload/v1776387804/NC2_lfjdri.jpg"
+        },
+        {
+            "id": 2,
+            "title": "PSITS Shortf Film Trailer Peoples Choice Award",
+            "url": "https://res.cloudinary.com/dvodxjuwq/image/upload/v1776390135/Peoples_Choice_Award_pdavrb.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Game Jam Video Game Ingkumhan Best in Programming",
+            "url": "https://res.cloudinary.com/dvodxjuwq/image/upload/v1776388278/Ingkumhan_wmunnp.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Senior High School Deploma",
+            "url": "https://res.cloudinary.com/dvodxjuwq/image/upload/v1776395214/Senior_High_School_Deploma_Edited_pn4ek1.jpg"
+        }
+    ]
+}

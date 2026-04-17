@@ -7,6 +7,7 @@ import Footer from './assets/Components/Footer/Footer'
 import Pubmats from './assets/Components/Pubmats/Pubmats.jsx';
 import Sublimation from './assets/Components/Sublimation/Sublimation.jsx';
 import Clips from './assets/Components/Videos/Clips.jsx';
+import Certificates from './assets/Components/Certificates/Certificates.jsx'
 
 
 
@@ -26,6 +27,7 @@ function App() {
       <Pubmats />
       <Sublimation />
       <Clips />
+      <Certificates />
       <Footer />
     </div>
   )
