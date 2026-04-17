@@ -38,17 +38,19 @@ function App() {
       {!loading && (
         <div className='relative min-h-screen'>
           {/* Fixed background */}
-          <div className={`fixed inset-0 -z-10 ${isLight ? 'bg-lightBG' : 'bg-darkBG'}`} />
+          <div className={`fixed inset-0 z-0 ${isLight ? 'bg-lightBG' : 'bg-darkBG'}`} />
 
-          <NavBar isOpen={isOpen} setIsOpen={setIsOpen} />
-          <Home isOpen={isOpen} />
-          <About />
-          <Skills />
-          <Pubmats />
-          <Sublimation />
-          <Clips />
-          <Certificates />
-          <Footer />
+          <div className='relative z-10'>
+            <NavBar isOpen={isOpen} setIsOpen={setIsOpen} />
+            <Home isOpen={isOpen} />
+            <About />
+            <Skills />
+            <Pubmats />
+            <Sublimation />
+            <Clips />
+            <Certificates />
+            <Footer />
+          </div>
         </div>
       )}
     </>
