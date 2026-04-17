@@ -59,19 +59,19 @@ function About() {
 
                     <div className={`mt-6 lg:mt-10  ${isLight ? 'text-black' : 'text-white'}`}>
                         <div className='flex flex-col sm:flex-row sm:justify-between gap-3'>
-                            <span className='flex items-center gap-3'>
+                            <a href="https://www.facebook.com/jannedenzelle.tagupa" target="_blank" rel="noopener noreferrer" className='flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer'>
                                 <FaFacebook size={20} />
                                 <p className='text-sm'>Angkool Denzelle Tagupa</p>
-                            </span>
-                            <span className='flex items-center gap-3 sm:mr-10'>
+                            </a>
+                            <a href="https://www.instagram.com/ice_kooled/" target="_blank" rel="noopener noreferrer" className='flex items-center gap-3 sm:mr-10 hover:opacity-80 transition-opacity cursor-pointer'>
                                 <FaInstagram size={20} />
                                 <p className='text-sm'>@Ice_Kooled</p>
-                            </span>
+                            </a>
                         </div>
-                        <div className='flex items-center gap-3 pt-3'>
+                        <a href="https://www.tiktok.com/@angkool_150" target="_blank" rel="noopener noreferrer" className='flex items-center gap-3 pt-3 hover:opacity-80 transition-opacity cursor-pointer'>
                             <FaTiktok size={20} />
                             <p className='text-sm'>Angkool Works and Effects</p>
-                        </div>
+                        </a>
                     </div>
                 </motion.div>
 
@@ -135,7 +135,7 @@ function About() {
             >
                 <div className='flex flex-col gap-4 w-full sm:w-auto'>
                     <Card icon={<MdLocationOn size={24} className='text-white' />} label="Location" value="Montevista Davao de Oro" />
-                    <Card icon={<BsBriefcase size={24} className='text-white' />} label="Experiance" value="3+ Years" />
+                    <Card icon={<BsBriefcase size={24} className='text-white' />} label="Experience" value="3+ Years" />
                 </div>
                 <div className='flex flex-col gap-4 w-full sm:w-auto'>
                     <Card icon={<FaGraduationCap size={24} className='text-white' />} label="Education" value="BS Information Technology" />

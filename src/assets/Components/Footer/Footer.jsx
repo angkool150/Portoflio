@@ -10,7 +10,7 @@ function Footer() {
         { icon: FaGithub, url: 'https://github.com/angkool150', label: 'GitHub' },
         { icon: FaFacebook, url: 'https://www.facebook.com/jannedenzelle.tagupa', label: 'Facebook' },
         { icon: FaTiktok, url: 'https://www.tiktok.com/@angkool_150', label: 'TikTok' },
-        { icon: FaEnvelope, url: 'denzelle.tagupa@gmail.com', label: 'Email' }
+        { icon: FaEnvelope, url: 'mailto:denzelle.tagupa@gmail.com', label: 'Email' }
     ]
     const { isLight } = useTheme()
 
@@ -80,6 +80,8 @@ function Footer() {
                                 <motion.a
                                     key={index}
                                     href={social.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     aria-label={social.label}
                                     className={`w-10 h-10 md:w-12 md:h-12 border-2 border-white rounded-full flex items-center justify-center`}
                                     whileHover={{

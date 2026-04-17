@@ -35,11 +35,11 @@ function Skills() {
                     Skills
                 </motion.h1>
                 <h3 className='text-center text-sm md:text-lg lg:text-[15px] pt-5 max-w-4xl'>
-                    The tools I use are just the foundation
+                    The tools I use are just the foundation;
                     <br />
                     how I use them is what brings ideas to life.
                     <br />
-                    Each software plays a role in creating clean, impactful, and professional visuals.
+                    Each piece of software plays a role in creating clean, impactful, and professional visuals.
                 </h3>
             </div>
 
