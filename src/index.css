@@ -1,11 +1,8 @@
 @import "tailwindcss";
 
-
 @theme {
   --font-sans: "Montserrat", sans-serif;
 }
-
-@custom-variant light (&:where(.light, .light *));
 
 @layer utilities {
   .bg-glass {
@@ -21,14 +18,14 @@
   }
 
   .bg-darkBG {
-    background-image: url('./assets/Images/black wallpaper.jpg');
+    background-image: url('/images/black-wallpaper.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
   }
 
   .bg-lightBG {
-    background-image: url('./assets/Images/white wallpaper.jpg');
+    background-image: url('/images/white-wallpaper.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
