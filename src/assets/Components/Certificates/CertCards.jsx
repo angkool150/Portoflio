@@ -39,6 +39,14 @@ function CertCards({ cert, imagePosition = '50% 50%' }) {
                         exit={{ opacity: 0 }}
                         onClick={() => setIsOpen(false)}
                     >
+                        <button
+                            onClick={() => setIsOpen(false)}
+                            className='fixed top-4 right-4 w-12 h-12 bg-glass border-2 border-white rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors shadow-lg z-10'
+                        >
+                            <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M6 18L18 6M6 6l12 12' />
+                            </svg>
+                        </button>
                         <motion.div
                             className='relative max-w-6xl max-h-[90vh] w-full h-full flex items-center justify-center'
                             initial={{ scale: 0.8, y: 50 }}
@@ -52,14 +60,6 @@ function CertCards({ cert, imagePosition = '50% 50%' }) {
                                 alt={cert.title}
                                 className='max-w-full max-h-full object-contain rounded-2xl border-2 border-white shadow-2xl'
                             />
-                            <button
-                                onClick={() => setIsOpen(false)}
-                                className='absolute -top-12 right-0 w-12 h-12 bg-glass active:bg-white hover:cursor-pointer  border-2 border-white rounded-full  flex items-center justify-center text-white transition-colors shadow-lg'
-                            >
-                                <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M6 18L18 6M6 6l12 12' />
-                                </svg>
-                            </button>
                         </motion.div>
                     </motion.div>
                 )}

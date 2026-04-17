@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
+import { useTheme } from './assets/Components/context/ThemeContext.jsx'
 import NavBar from './assets/Components/NabBar/NavBar.jsx';
 import Home from './assets/Components/Home/Home.jsx';
 import About from './assets/Components/About/About.jsx';
@@ -18,6 +19,7 @@ function App() {
 
   const [isOpen, setIsOpen] = useState(false)
   const [loading, setLoading] = useState(true)
+  const { isLight } = useTheme()
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -36,7 +38,7 @@ function App() {
       {!loading && (
         <div className='relative min-h-screen'>
           {/* Fixed background */}
-          <div className='fixed inset-0 bg-darkBG -z-10' />
+          <div className={`fixed inset-0 -z-10 ${isLight ? 'bg-lightBG' : 'bg-darkBG'}`} />
 
           <NavBar isOpen={isOpen} setIsOpen={setIsOpen} />
           <Home isOpen={isOpen} />

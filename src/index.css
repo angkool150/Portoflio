@@ -5,6 +5,7 @@
   --font-sans: "Montserrat", sans-serif;
 }
 
+@custom-variant light (&:where(.light, .light *));
 
 @layer utilities {
   .bg-glass {
@@ -13,6 +14,11 @@
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
   }
 
+  .bg-glass-dark {
+    background-color: rgba(0, 0, 0, 0.63);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+  }
 
   .bg-darkBG {
     background-image: url('./assets/Images/black wallpaper.jpg');
