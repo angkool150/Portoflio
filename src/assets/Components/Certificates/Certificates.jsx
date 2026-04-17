@@ -2,17 +2,21 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import CertCard from './CertCards.jsx';
 import cert from '../../../data/certificates.json'
+import { useTheme } from '../context/ThemeContext.jsx'
+
 
 function Certificates() {
+    const { isLight } = useTheme()
     return (
         <div id='certificates' className='w-full min-h-screen overflow-x-hidden py-20 md:py-10 flex flex-col items-center justify-center'>
-            <div className='text-white px-4 mt-16 md:mt-0'>
+            <div className={` ${isLight ? 'text-black' : 'text-white'} px-4 mt-16 md:mt-0`}>
                 <div className='h-30 flex items-center justify-center'>
                     <motion.h1
-                        className='font-bold text-3xl md:text-5xl lg:text-[50px] font-sans cursor-pointer text-center pb-5'
+                        className='font-bold text-3xl md:text-5xl lg:text-[50px] font-sans cursor-pointer text-center pb-5 '
                         initial={{ textShadow: "0 0 0px rgba(255,255,255,0)" }}
                         whileHover={{
-                            textShadow: "0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.6)"
+                            scale: 1.1,
+                            textShadow: isLight ? "0 0 0px rgba(255,255,255,0)" : "0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.6)"
                         }}
                         transition={{
                             type: "spring",

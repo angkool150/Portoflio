@@ -1,17 +1,22 @@
 // CertCards.jsx
+
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTheme } from '../context/ThemeContext.jsx'
+
 
 function CertCards({ cert, imagePosition = '50% 50%' }) {
+
+    const { isLight } = useTheme()
     const [isOpen, setIsOpen] = useState(false)
 
     return (
         <>
             <motion.div
-                className='w-full sm:w-80 md:w-72 lg:w-80 h-50 bg-glass border-2 border-white rounded-2xl overflow-hidden cursor-pointer flex-shrink-0'
+                className={` ${isLight ? 'bg-glass-dark' : 'bg-glass'} w-full sm:w-80 md:w-72 lg:w-80 h-50  border-2 border-white rounded-2xl overflow-hidden cursor-pointer flex-shrink-0`}
                 whileHover={{
                     scale: 1.05,
-                    boxShadow: '0 0 30px rgba(255,255,255,0.5), 0 0 60px rgba(255,255,255,0.3)'
+                    boxShadow: isLight ? '0 25px 50px -12px rgba(0, 0, 0, 0.5)' : '0 0 30px rgba(255,255,255,0.5), 0 0 60px rgba(255,255,255,0.3)'
                 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.3 }}

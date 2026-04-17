@@ -7,20 +7,24 @@ import Capcut from '../../Images/CapCut-Logo-Video-Editing-App-Icon.png'
 import Photoshop from '../../Images/Phooshop-logo.png'
 import AE from '../../Images/AE-logo.png'
 import { motion } from "framer-motion"
+import { useTheme } from '../context/ThemeContext.jsx'
 
 
 
 
 
 function Skills() {
+    const { isLight } = useTheme()
     return (
         <div id='skills' className='w-full min-h-screen font-sans py-20 md:py-10 px-4 flex flex-col justify-center '>
-            <div className='text-white flex items-center justify-center flex-col mb-8 md:mb-12 mt-16 md:mt-0'>
+            <div className={` ${isLight ? 'text-black' : 'text-white'} flex items-center justify-center flex-col mb-8 md:mb-12 mt-16 md:mt-0`}>
+
                 <motion.h1
-                    className='font-bold text-3xl md:text-5xl lg:text-[50px] font-sans cursor-pointer'
+                    className={`font-bold text-3xl md:text-5xl lg:text-[50px] font-sans cursor-pointer text-center pb-5 mt-30 ${isLight ? 'text-black' : 'text-white'}`}
                     initial={{ textShadow: "0 0 0px rgba(255,255,255,0)" }}
                     whileHover={{
-                        textShadow: "0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.6)"
+                        scale: 1.1,
+                        textShadow: isLight ? "0 0 0px rgba(255,255,255,0)" : "0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.6)"
                     }}
                     transition={{
                         type: "spring",
@@ -28,7 +32,7 @@ function Skills() {
                         damping: 20
                     }}
                 >
-                    My Skills
+                    Skills
                 </motion.h1>
                 <h3 className='text-center text-sm md:text-lg lg:text-[15px] pt-5 max-w-4xl'>
                     The tools I use are just the foundation

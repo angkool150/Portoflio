@@ -1,13 +1,15 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import { isElementTextInput, motion } from 'framer-motion'
 import Card from './InforCard.jsx'
 import { MdLocationOn } from "react-icons/md";
 import { BsBriefcase } from "react-icons/bs";
 import { FaGraduationCap } from "react-icons/fa";
 import YourPhoto from '../../Images/Angkool-Pic.png';
 import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa6";
+import { useTheme } from '../context/ThemeContext.jsx'
 
 function About() {
+    const { isLight } = useTheme()
     return (
         <div id='about' className='text-white w-full flex flex-col items-center justify-center min-h-screen py-20 px-6 sm:px-12  relative overflow-hidden'>
 
@@ -47,15 +49,15 @@ function About() {
                         className='flex flex-col gap-0 cursor-pointer'
                         initial={{ filter: 'drop-shadow(0 0 0px rgba(255,255,255,0))' }}
                         whileHover={{
-                            filter: 'drop-shadow(0 0 20px rgba(255,255,255,0.7))'
+                            filter: isLight ? 'drop-shadow(0 0 0px rgba(255,255,255,0))' : 'drop-shadow(0 0 20px rgba(255,255,255,0.7))'
                         }}
                         transition={{ duration: 0.3 }}
                     >
-                        <h1 className='text-5xl sm:text-6xl md:text-7xl lg:text-[90px] font-bold leading-[0.9]'>ANGKOOL</h1>
-                        <h1 className='text-5xl sm:text-6xl md:text-7xl lg:text-[90px] font-bold leading-[0.9] ml-10 sm:ml-20 lg:ml-30'>TAGUPA</h1>
+                        <h1 className={`text-5xl sm:text-6xl md:text-7xl lg:text-[90px] font-bold leading-[0.9] ${isLight ? 'text-black' : 'text-white'}`}>ANGKOOL</h1>
+                        <h1 className={`text-5xl sm:text-6xl md:text-7xl lg:text-[90px] font-bold leading-[0.9] ml-10 sm:ml-20 lg:ml-30 ${isLight ? 'text-black' : 'text-white'}`}>TAGUPA</h1>
                     </motion.div>
 
-                    <div className='mt-6 lg:mt-10'>
+                    <div className={`mt-6 lg:mt-10  ${isLight ? 'text-black' : 'text-white'}`}>
                         <div className='flex flex-col sm:flex-row sm:justify-between gap-3'>
                             <span className='flex items-center gap-3'>
                                 <FaFacebook size={20} />
@@ -79,7 +81,7 @@ function About() {
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
-                    className='w-full lg:w-96 relative z-30'
+                    className={`w-full lg:w-96 relative z-30 ${isLight ? 'text-black' : 'text-white'}`}
                 >
                     <p className='text-sm leading-relaxed'>
                         I'm a passionate all-around editor with experience in video editing, layout design, and custom apparel such as t-shirts, jerseys, and jackets. I focus on delivering high-quality visuals that are both creative and effective.
@@ -99,7 +101,7 @@ function About() {
 
             {/* Circle outline - Large screens only */}
             <div className='absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 hidden lg:block'>
-                <div className='w-[380px] h-[380px] rounded-full border-2 border-white' />
+                <div className={`w-[380px] h-[380px] rounded-full  ${isLight ? 'border-black border-4' : 'border-white border-2'}`} />
             </div>
 
             {/* Photo - Large screens only */}

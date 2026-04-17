@@ -4,19 +4,22 @@ import ImageCard from '../../Components/Pubmats/ImageCard.jsx'
 import ImageModal from '../../Components/Pubmats/ImageModal.jsx'
 import './carousel.css'
 import { motion } from 'framer-motion';
+import { useTheme } from '../context/ThemeContext.jsx'
 
 function Pubmats() {
     const [selectedImage, setSelectedImage] = useState(null)
+    const { isLight } = useTheme()
 
     return (
         <div id='pubmats' className='w-full min-h-screen py-10 px-4 flex flex-col justify-center items-center'>
             <div className='max-w-6xl mx-auto w-full'>
 
                 <motion.h1
-                    className='font-bold text-3xl md:text-5xl lg:text-[50px] font-sans cursor-pointer text-center text-white mb-2 mt-15'
+                    className={`font-bold text-3xl md:text-5xl lg:text-[50px] font-sans cursor-pointer text-center pb-5 mt-30 ${isLight ? 'text-black' : 'text-white'}`}
                     initial={{ textShadow: "0 0 0px rgba(255,255,255,0)" }}
                     whileHover={{
-                        textShadow: "0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.6)"
+                        scale: 1.1,
+                        textShadow: isLight ? "0 0 0px rgba(255,255,255,0)" : "0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.6)"
                     }}
                     transition={{
                         type: "spring",
@@ -26,10 +29,10 @@ function Pubmats() {
                 >
                     Pubmats
                 </motion.h1>
-                <h1 className='text-white text-center mb-10 text-sm md:text-base'>Creative publication materials designed to inform, engage, and stand out.</h1>
+                <h1 className={`${isLight ? 'text-black' : 'text-white'} text-center mb-10 text-sm md:text-base`}>Creative publication materials designed to inform, engage, and stand out.</h1>
 
                 {/* Carousel Container */}
-                <div className='bg-glass border-2 border-white/30 rounded-3xl p-4 md:p-6 backdrop-blur-lg'>
+                <div className={`border-2 border-white/30 rounded-3xl p-4 md:p-6 backdrop-blur-lg ${isLight ? 'bg-glass-dark' : 'bg-glass'}`}>
                     {/* Top Row - Left to Right */}
                     <div className='carousel-container mb-6 overflow-x-hidden overflow-y-visible'>
                         <div className='carousel-track carousel-left-to-right'>
@@ -66,7 +69,7 @@ function Pubmats() {
                 )}
 
             </div>
-        </div>
+        </div >
     )
 }
 

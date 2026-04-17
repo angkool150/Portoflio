@@ -66,4 +66,4 @@ function Home({ isOpen }) {
     )
 }
 
-export default Home
+export default Home 

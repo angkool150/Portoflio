@@ -2,12 +2,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import DarkSubli from '../../Images/T Shirt Layouts/For-Dark.png';
 import LightSubli from '../../Images/T Shirt Layouts/For-Light.png';
+import { useTheme } from '../context/ThemeContext.jsx'
 
 function Sublimation() {
+    const { isLight } = useTheme()
+
     return (
-        <div id='sublimation' className='w-full min-h-screen text-white py-10 px-4 mt-25 
-        flex flex-col items-center justify-center
-        '>
+        <div id='sublimation' className={
+            `w-full min-h-screen ${isLight ? 'text-black' : 'text-white'} py-10 px-4 mt-25 
+        flex flex-col items-center justify-center`
+        }>
             <div className='max-w-7xl mx-auto'>
                 <motion.h1
                     className='font-bold text-3xl md:text-5xl lg:text-[50px] font-sans cursor-pointer text-center pb-5 mt-30'
@@ -42,17 +46,34 @@ function Sublimation() {
                         transition={{ duration: 0.6, delay: 0.3 }}
                         className='rounded-2xl'
                     >
-                        <motion.img
-                            src={DarkSubli}
-                            alt="Sublimation Layout"
-                            className='w-full h-full object-cover cursor-pointer rounded-2xl '
-                            whileHover={{
-                                scale: 1.05,
-                                filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 60px rgba(255, 255, 255, 0.6))'
-                            }}
-                            initial={{ filter: 'drop-shadow(0 0 0px rgba(255, 255, 255, 0))' }}
-                            transition={{ duration: 0.3 }}
-                        />
+                        {
+                            isLight ? (
+                                <motion.img
+                                    src={LightSubli}
+                                    alt="Sublimation Layout"
+                                    className='w-full h-full object-cover cursor-pointer rounded-2xl '
+                                    whileHover={{
+                                        scale: 1.05,
+                                        filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 60px rgba(255, 255, 255, 0.6))'
+                                    }}
+                                    initial={{ filter: 'drop-shadow(0 0 0px rgba(255, 255, 255, 0))' }}
+                                    transition={{ duration: 0.3 }}
+                                />
+                            ) :
+                                (
+                                    <motion.img
+                                        src={DarkSubli}
+                                        alt="Sublimation Layout"
+                                        className='w-full h-full object-cover cursor-pointer rounded-2xl '
+                                        whileHover={{
+                                            scale: 1.05,
+                                            filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 60px rgba(255, 255, 255, 0.6))'
+                                        }}
+                                        initial={{ filter: 'drop-shadow(0 0 0px rgba(255, 255, 255, 0))' }}
+                                        transition={{ duration: 0.3 }}
+                                    />
+                                )
+                        }
                     </motion.div>
                 </div>
             </div>

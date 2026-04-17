@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useTheme } from '../context/ThemeContext.jsx'
 
 function SkillsCards({ icon, icon2, title, description, iconSize = 40, icon2Size = 40 }) {
     const renderIcon = (src, size) => {
@@ -9,10 +10,10 @@ function SkillsCards({ icon, icon2, title, description, iconSize = 40, icon2Size
         }
         return React.createElement(src, { size: size, color: 'white' })
     }
-
+    const { isLight } = useTheme()
     return (
         <motion.div
-            className='w-full max-w-[430px] min-h-[180px] bg-glass border-white border-2 rounded-xl text-white m-2 cursor-pointer transition-shadow duration-300'
+            className={`w-full max-w-[430px] min-h-[180px] ${isLight ? 'bg-glass-dark' : 'bg-glass'} border-white border-2 rounded-xl text-white m-2 cursor-pointer transition-shadow duration-300`}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

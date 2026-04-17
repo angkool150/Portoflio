@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTheme } from '../context/ThemeContext.jsx'
 
 function VideoCard({ video }) {
     const [isOpen, setIsOpen] = useState(false)
@@ -8,11 +9,13 @@ function VideoCard({ video }) {
         const videoId = url.split('/embed/')[1]?.split('?')[0]
         return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
     }
+    const { isLight } = useTheme()
 
     return (
+
         <>
             <motion.div
-                className='bg-glass w-80 h-60 border-2 border-white rounded-2xl overflow-hidden shadow-lg cursor-pointer flex-shrink-0'
+                className={` ${isLight ? 'bg-glass-dark' : 'bg-glass'} w-80 h-60 border-2 border-white rounded-2xl overflow-hidden shadow-lg cursor-pointer flex-shrink-0`}
                 whileHover={{ scale: 1.05, boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)' }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.3 }}
