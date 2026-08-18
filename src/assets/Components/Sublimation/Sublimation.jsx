@@ -3,12 +3,45 @@ import { motion } from 'framer-motion';
 import DarkSubli from '../../Images/T Shirt Layouts/For-Dark.png';
 import LightSubli from '../../Images/T Shirt Layouts/For-Light.png';
 import { useTheme } from '../context/ThemeContext.jsx'
+import { SkeletonBlock, SkeletonText } from '../Skeleton/Skeleton.jsx'
 
-function Sublimation() {
+function Sublimation({ loading = false }) {
     const { isLight } = useTheme()
 
+    if (loading) {
+        return (
+            <motion.div
+                key="sublimation-skeleton"
+                id='sublimation'
+                aria-busy="true"
+                aria-live="polite"
+                role="status"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className={`w-full min-h-screen ${isLight ? 'text-black' : 'text-white'} py-10 px-4 mt-25 flex flex-col items-center justify-center`}
+            >
+                <span className="sr-only">Loading sublimation layouts...</span>
+                <div className='max-w-7xl mx-auto w-full'>
+                    <SkeletonText lines={1} widths={['320px']} lineClassName='h-10 md:h-12' className='mx-auto max-w-[320px] pb-5 mt-30' />
+                    <SkeletonText lines={1} widths={['240px']} className='mx-auto mb-10 max-w-[240px]' />
+                    <div className='w-full px-4 md:px-20 py-8'>
+                        <SkeletonBlock className='aspect-[16/9] w-full rounded-2xl' rounded="2xl" />
+                    </div>
+                </div>
+            </motion.div>
+        )
+    }
+
     return (
-        <div id='sublimation' className={
+        <motion.div
+            key="sublimation-content"
+            id='sublimation'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.35 }}
+            className={
             `w-full min-h-screen ${isLight ? 'text-black' : 'text-white'} py-10 px-4 mt-25 
         flex flex-col items-center justify-center`
         }>
@@ -77,7 +110,7 @@ function Sublimation() {
                     </motion.div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

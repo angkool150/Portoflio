@@ -3,13 +3,61 @@ import VideoCard from './VideoCard.jsx'
 import data from '../../../data/videoClips.json'
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext.jsx'
+import { SkeletonCard, SkeletonText } from '../Skeleton/Skeleton.jsx'
 
 
-function Clips() {
+function Clips({ loading = false }) {
 
     const { isLight } = useTheme()
+
+    if (loading) {
+        return (
+            <motion.div
+                key="videos-skeleton"
+                id='videos'
+                aria-busy="true"
+                aria-live="polite"
+                role="status"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className={`w-full min-h-screen ${isLight ? 'text-black' : 'text-white'} px-4 flex flex-col justify-center items-center py-20 md:py-10`}
+            >
+                <span className="sr-only">Loading edited videos...</span>
+                <div className='max-w-7xl mx-auto mt-16 md:mt-0'>
+                    <SkeletonText lines={1} widths={['230px']} lineClassName='h-10 md:h-12' className='mx-auto max-w-[230px] pb-5 mt-5' />
+                    <SkeletonText lines={1} widths={['100%']} className='mx-auto mb-10 max-w-2xl' />
+                </div>
+
+                <div className='w-full flex flex-col items-center gap-6 px-4'>
+                    {[0, 1].map((row) => (
+                        <div key={row} className='flex flex-wrap justify-center gap-6'>
+                            {Array.from({ length: 4 }).map((_, index) => (
+                                <SkeletonCard
+                                    key={index}
+                                    media
+                                    mediaClassName='h-40'
+                                    lines={1}
+                                    className='w-80 h-60 flex-shrink-0'
+                                />
+                            ))}
+                        </div>
+                    ))}
+                </div>
+            </motion.div>
+        )
+    }
+
     return (
-        <div id='videos' className={`w-full min-h-screen ${isLight ? 'text-black' : 'text-white'} px-4 flex flex-col justify-center items-center py-20 md:py-10}`}>
+        <motion.div
+            key="videos-content"
+            id='videos'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.35 }}
+            className={`w-full min-h-screen ${isLight ? 'text-black' : 'text-white'} px-4 flex flex-col justify-center items-center py-20 md:py-10`}
+        >
             <div className='max-w-7xl mx-auto mt-16 md:mt-0'>
                 <motion.h1
                     className='font-bold text-3xl md:text-5xl lg:text-[50px] font-sans cursor-pointer text-center pb-5 mt-5'
@@ -44,7 +92,7 @@ function Clips() {
                     <VideoCard video={data.videos[7]} />
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import { FaGithub, FaFacebook, FaTiktok, FaEnvelope, FaHeart } from 'react-icons/fa'
 import { useTheme } from '../context/ThemeContext.jsx'

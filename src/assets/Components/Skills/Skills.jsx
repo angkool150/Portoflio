@@ -8,15 +8,60 @@ import Photoshop from '../../Images/Phooshop-logo.png'
 import AE from '../../Images/AE-logo.png'
 import { motion } from "framer-motion"
 import { useTheme } from '../context/ThemeContext.jsx'
+import { SkeletonCard, SkeletonText } from '../Skeleton/Skeleton.jsx'
 
 
 
 
 
-function Skills() {
+function Skills({ loading = false }) {
     const { isLight } = useTheme()
+
+    if (loading) {
+        return (
+            <motion.div
+                key="skills-skeleton"
+                id='skills'
+                aria-busy="true"
+                aria-live="polite"
+                role="status"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className='w-full min-h-screen font-sans py-20 md:py-10 px-4 flex flex-col justify-center'
+            >
+                <span className="sr-only">Loading skills cards...</span>
+                <div className='flex items-center justify-center flex-col mb-8 md:mb-12 mt-16 md:mt-0'>
+                    <SkeletonText lines={1} widths={['180px']} lineClassName='h-10 md:h-12' className='max-w-[180px] pb-5 mt-30' />
+                    <SkeletonText lines={3} widths={['100%', '88%', '72%']} className='max-w-4xl pt-5' />
+                </div>
+
+                <div className='w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 lg:gap-6 px-2 md:px-4 place-items-center'>
+                    {Array.from({ length: 6 }).map((_, index) => (
+                        <SkeletonCard
+                            key={index}
+                            media={false}
+                            avatar
+                            avatarSize="md"
+                            lines={2}
+                            className='w-full max-w-[430px] min-h-[180px] m-2'
+                        />
+                    ))}
+                </div>
+            </motion.div>
+        )
+    }
+
     return (
-        <div id='skills' className='w-full min-h-screen font-sans py-20 md:py-10 px-4 flex flex-col justify-center '>
+        <motion.div
+            key="skills-content"
+            id='skills'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.35 }}
+            className='w-full min-h-screen font-sans py-20 md:py-10 px-4 flex flex-col justify-center '
+        >
             <div className={` ${isLight ? 'text-black' : 'text-white'} flex items-center justify-center flex-col mb-8 md:mb-12 mt-16 md:mt-0`}>
 
                 <motion.h1
@@ -88,7 +133,7 @@ function Skills() {
 
             </div>
 
-        </div>
+        </motion.div>
     )
 }
 

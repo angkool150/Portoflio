@@ -1,5 +1,5 @@
 import React from 'react'
-import { isElementTextInput, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Card from './InforCard.jsx'
 import { MdLocationOn } from "react-icons/md";
 import { BsBriefcase } from "react-icons/bs";
@@ -7,11 +7,70 @@ import { FaGraduationCap } from "react-icons/fa";
 import YourPhoto from '../../Images/Angkool-Pic.png';
 import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa6";
 import { useTheme } from '../context/ThemeContext.jsx'
+import { SkeletonAvatar, SkeletonCard, SkeletonText } from '../Skeleton/Skeleton.jsx'
 
-function About() {
+function About({ loading = false }) {
     const { isLight } = useTheme()
+
+    if (loading) {
+        return (
+            <motion.div
+                key="about-skeleton"
+                id='about'
+                aria-busy="true"
+                aria-live="polite"
+                role="status"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className='text-white w-full flex flex-col items-center justify-center min-h-screen py-20 px-6 sm:px-12 relative overflow-hidden'
+            >
+                <span className="sr-only">Loading profile section...</span>
+
+                <SkeletonAvatar size="portrait" shape="rounded" className='block lg:hidden mb-8 border-2 border-white' />
+
+                <div className='flex flex-col lg:flex-row justify-between items-start lg:items-center w-full max-w-[1300px] gap-10 lg:gap-20 relative z-0'>
+                    <div className='w-full lg:w-auto'>
+                        <SkeletonText lines={2} widths={['78%', '68%']} lineClassName='h-12 sm:h-14 md:h-16 lg:h-20' className='max-w-xl' />
+                        <div className='mt-8 space-y-3'>
+                            <SkeletonText lines={2} widths={['56%', '48%']} />
+                            <SkeletonText lines={1} widths={['50%']} />
+                        </div>
+                    </div>
+
+                    <div className='hidden lg:block'>
+                        <SkeletonAvatar size="hero" shape="rounded" />
+                    </div>
+
+                    <div className='w-full lg:w-96 relative z-30'>
+                        <SkeletonText lines={7} widths={['100%', '96%', '92%', '78%', '64%', '42%', '36%']} />
+                    </div>
+                </div>
+
+                <div className='flex flex-col sm:flex-row justify-between w-full max-w-[1300px] gap-6 mt-16 relative z-30'>
+                    <div className='flex flex-col gap-4 w-full sm:w-auto'>
+                        <SkeletonCard media={false} avatar avatarSize="sm" lines={2} compact className='w-full sm:w-[280px] md:w-[300px] lg:w-[320px] h-[70px] p-3' />
+                        <SkeletonCard media={false} avatar avatarSize="sm" lines={2} compact className='w-full sm:w-[280px] md:w-[300px] lg:w-[320px] h-[70px] p-3' />
+                    </div>
+                    <div className='flex flex-col gap-4 w-full sm:w-auto'>
+                        <SkeletonCard media={false} avatar avatarSize="sm" lines={2} compact className='w-full sm:w-[280px] md:w-[300px] lg:w-[320px] h-[70px] p-3' />
+                        <SkeletonCard media={false} avatar avatarSize="sm" lines={2} compact className='w-full sm:w-[280px] md:w-[300px] lg:w-[320px] h-[70px] p-3' />
+                    </div>
+                </div>
+            </motion.div>
+        )
+    }
+
     return (
-        <div id='about' className='text-white w-full flex flex-col items-center justify-center min-h-screen py-20 px-6 sm:px-12  relative overflow-hidden'>
+        <motion.div
+            key="about-content"
+            id='about'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.35 }}
+            className='text-white w-full flex flex-col items-center justify-center min-h-screen py-20 px-6 sm:px-12  relative overflow-hidden'
+        >
 
             {/* Mobile & MD Photo - visible only below lg */}
             <motion.div
@@ -143,7 +202,7 @@ function About() {
                 </div>
             </motion.div>
 
-        </div>
+        </motion.div>
     )
 }
 

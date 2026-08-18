@@ -2,18 +2,61 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useTheme } from '../context/ThemeContext.jsx'
 import BigLogo from '../../Images/AngkoolLogo/Angkool-Works-and-Effects.svg'
+import { SkeletonBlock, SkeletonText } from '../Skeleton/Skeleton.jsx'
 
-function Home({ isOpen }) {
+function Home({ isOpen, loading = false }) {
     const { isLight } = useTheme()
+
+    if (loading) {
+        return (
+            <motion.div
+                key="home-skeleton"
+                id='home'
+                aria-busy="true"
+                aria-live="polite"
+                role="status"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, paddingTop: isOpen ? '220px' : '0px' }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className={`px-6 sm:px-12 md:px-20 lg:px-32 xl:px-85 pt-20 h-screen ${isLight ? 'bg-white/30' : 'bg-black/30'}`}
+            >
+                <span className="sr-only">Loading hero content...</span>
+                <div className='pt-64 sm:pt-48 md:pt-50'>
+                    <SkeletonBlock className='mx-auto h-24 w-full max-w-4xl sm:h-32 md:h-40' rounded="2xl" />
+                </div>
+
+                <div className='w-full flex flex-col sm:flex-row gap-4 justify-center items-center mt-10'>
+                    <SkeletonBlock className='h-12 w-40 sm:h-13 sm:w-45' rounded="full" />
+                    <SkeletonBlock className='h-12 w-40 sm:h-13 sm:w-45' rounded="full" />
+                </div>
+
+                <div className='flex flex-col items-center px-4'>
+                    <SkeletonText
+                        lines={3}
+                        widths={['100%', '92%', '62%']}
+                        className='mt-10 max-w-full sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px]'
+                    />
+                    <SkeletonText
+                        lines={1}
+                        widths={['78%']}
+                        className='mt-10 max-w-full sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px]'
+                    />
+                </div>
+            </motion.div>
+        )
+    }
 
     return (
         <motion.div
+            key="home-content"
             id='home'
-            animate={{ paddingTop: isOpen ? '220px' : '0px' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, paddingTop: isOpen ? '220px' : '0px' }}
             transition={{ duration: 0.3 }}
             className={`px-6 sm:px-12 md:px-20 lg:px-32 xl:px-85 pt-20 h-screen ${isLight ? 'bg-white/30' : 'bg-black/30'}`}
         >
-            {/* Big Logo */}a
+            {/* Big Logo */}
             <motion.div
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}

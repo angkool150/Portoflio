@@ -5,13 +5,56 @@ import ImageModal from '../../Components/Pubmats/ImageModal.jsx'
 import './carousel.css'
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext.jsx'
+import { SkeletonBlock, SkeletonText } from '../Skeleton/Skeleton.jsx'
 
-function Pubmats() {
+function Pubmats({ loading = false }) {
     const [selectedImage, setSelectedImage] = useState(null)
     const { isLight } = useTheme()
 
+    if (loading) {
+        return (
+            <motion.div
+                key="pubmats-skeleton"
+                id='pubmats'
+                aria-busy="true"
+                aria-live="polite"
+                role="status"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className='w-full min-h-screen py-10 px-4 flex flex-col justify-center items-center'
+            >
+                <span className="sr-only">Loading publication materials...</span>
+                <div className='max-w-6xl mx-auto w-full'>
+                    <SkeletonText lines={1} widths={['190px']} lineClassName='h-10 md:h-12' className='mx-auto max-w-[190px] pb-5 mt-30' />
+                    <SkeletonText lines={1} widths={['100%']} className='mx-auto mb-10 max-w-lg' />
+
+                    <div className={`border-2 border-white/30 rounded-3xl p-4 md:p-6 backdrop-blur-lg ${isLight ? 'bg-glass-dark' : 'bg-glass'}`}>
+                        {[0, 1].map((row) => (
+                            <div key={row} className={`carousel-container overflow-hidden ${row === 0 ? 'mb-6' : ''}`}>
+                                <div className='flex gap-4 min-w-max'>
+                                    {Array.from({ length: 6 }).map((_, index) => (
+                                        <SkeletonBlock key={index} className='h-60 w-60 border-2 border-white' rounded="2xl" />
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </motion.div>
+        )
+    }
+
     return (
-        <div id='pubmats' className='w-full min-h-screen py-10 px-4 flex flex-col justify-center items-center'>
+        <motion.div
+            key="pubmats-content"
+            id='pubmats'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.35 }}
+            className='w-full min-h-screen py-10 px-4 flex flex-col justify-center items-center'
+        >
             <div className='max-w-6xl mx-auto w-full'>
 
                 <motion.h1
@@ -69,7 +112,7 @@ function Pubmats() {
                 )}
 
             </div>
-        </div >
+        </motion.div >
     )
 }
 

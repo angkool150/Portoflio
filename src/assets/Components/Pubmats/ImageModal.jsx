@@ -35,17 +35,17 @@ function ImageModal({ src, onClose }) {
 
                 {/* Image Container */}
                 <motion.div
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    exit={{ scale: 0.8, opacity: 0 }}
+                    initial={{ scale: 0.8, opacity: 0, y: 50 }}
+                    animate={{ scale: 1, opacity: 1, y: 0 }}
+                    exit={{ scale: 0.8, opacity: 0, y: 50 }}
                     transition={{ type: 'spring', damping: 25 }}
-                    className='relative max-w-3xl max-h-[70vh] w-full'
+                    className='relative max-w-6xl max-h-[90vh] w-full h-full flex items-center justify-center'
                     onClick={(e) => e.stopPropagation()}
                 >
                     <img
                         src={src}
                         alt="Full size"
-                        className='w-full h-full object-contain rounded-lg shadow-2xl'
+                        className='max-w-full max-h-full object-contain rounded-2xl border-2 border-white shadow-2xl'
                     />
                 </motion.div>
             </motion.div>
