@@ -9,12 +9,14 @@ import Pubmats from './assets/Components/Pubmats/Pubmats.jsx';
 import Sublimation from './assets/Components/Sublimation/Sublimation.jsx';
 import Clips from './assets/Components/Videos/Clips.jsx';
 import Certificates from './assets/Components/Certificates/Certificates.jsx'
+import ContactModal from './assets/Components/Contact/ContactModal.jsx'
 
 const CONTENT_LOAD_DELAY = 1400
 
 function App() {
 
   const [isOpen, setIsOpen] = useState(false)
+  const [contactOpen, setContactOpen] = useState(false)
   const [contentLoading, setContentLoading] = useState(true)
   const { isLight } = useTheme()
 
@@ -37,16 +39,17 @@ function App() {
           <span className="sr-only">
             {contentLoading ? 'Loading portfolio sections...' : 'Portfolio sections loaded.'}
           </span>
-          <Home isOpen={isOpen} loading={contentLoading} />
-          <About loading={contentLoading} />
+          <Home isOpen={isOpen} loading={contentLoading} onContactClick={() => setContactOpen(true)} />
+          <About loading={contentLoading} onContactClick={() => setContactOpen(true)} />
           <Skills loading={contentLoading} />
           <Pubmats loading={contentLoading} />
           <Sublimation loading={contentLoading} />
           <Clips loading={contentLoading} />
           <Certificates loading={contentLoading} />
         </main>
-        <Footer />
+        <Footer onContactClick={() => setContactOpen(true)} />
       </div>
+      <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
     </div>
   )
 }

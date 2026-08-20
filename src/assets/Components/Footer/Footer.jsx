@@ -3,14 +3,14 @@ import { motion } from 'framer-motion'
 import { FaGithub, FaFacebook, FaTiktok, FaEnvelope, FaHeart } from 'react-icons/fa'
 import { useTheme } from '../context/ThemeContext.jsx'
 
-function Footer() {
+function Footer({ onContactClick }) {
     const currentYear = new Date().getFullYear()
 
     const socialLinks = [
         { icon: FaGithub, url: 'https://github.com/angkool150', label: 'GitHub' },
         { icon: FaFacebook, url: 'https://www.facebook.com/jannedenzelle.tagupa', label: 'Facebook' },
         { icon: FaTiktok, url: 'https://www.tiktok.com/@angkool_150', label: 'TikTok' },
-        { icon: FaEnvelope, url: 'mailto:denzelle.tagupa@gmail.com', label: 'Email' }
+        { icon: FaEnvelope, label: 'Email', isContact: true }
     ]
     const { isLight } = useTheme()
 
@@ -47,18 +47,28 @@ function Footer() {
                             Quick Links
                         </h3>
                         <ul className='space-y-2'>
-                            {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((link) => (
+                            {['Home', 'About', 'Skills', 'Contact'].map((link) => (
                                 <motion.li
                                     key={link}
                                     whileHover={{ x: 5 }}
                                     transition={{ duration: 0.2 }}
                                 >
-                                    <a
-                                        href={`#${link.toLowerCase()}`}
-                                        className={`text-sm md:text-base text-white hover:text-white hover:text-shadow-glow transition-all duration-300`}
-                                    >
-                                        {link}
-                                    </a>
+                                    {link === 'Contact' ? (
+                                        <button
+                                            type='button'
+                                            onClick={onContactClick}
+                                            className='text-sm md:text-base text-white hover:text-white hover:text-shadow-glow transition-all duration-300'
+                                        >
+                                            {link}
+                                        </button>
+                                    ) : (
+                                        <a
+                                            href={`#${link.toLowerCase()}`}
+                                            className='text-sm md:text-base text-white hover:text-white hover:text-shadow-glow transition-all duration-300'
+                                        >
+                                            {link}
+                                        </a>
+                                    )}
                                 </motion.li>
                             ))}
                         </ul>
@@ -76,25 +86,30 @@ function Footer() {
                             Connect
                         </h3>
                         <div className='flex justify-center md:justify-end gap-4 text-white'>
-                            {socialLinks.map((social, index) => (
-                                <motion.a
-                                    key={index}
-                                    href={social.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label={social.label}
-                                    className={`w-10 h-10 md:w-12 md:h-12 border-2 border-white rounded-full flex items-center justify-center`}
-                                    whileHover={{
+                            {socialLinks.map((social, index) => {
+                                const linkProps = {
+                                    key: index,
+                                    'aria-label': social.label,
+                                    className: 'w-10 h-10 md:w-12 md:h-12 border-2 border-white rounded-full flex items-center justify-center',
+                                    whileHover: {
                                         scale: 1.2,
                                         rotate: 360,
                                         boxShadow: isLight ? '0 0 0px rgba(255, 255, 255, 0)' : '0 0 20px rgba(255, 255, 255, 0.8)'
-                                    }}
-                                    whileTap={{ scale: 0.9 }}
-                                    transition={{ duration: 0.3 }}
-                                >
-                                    <social.icon size={20} />
-                                </motion.a>
-                            ))}
+                                    },
+                                    whileTap: { scale: 0.9 },
+                                    transition: { duration: 0.3 }
+                                }
+
+                                return social.isContact ? (
+                                    <motion.button type='button' onClick={onContactClick} {...linkProps}>
+                                        <social.icon size={20} />
+                                    </motion.button>
+                                ) : (
+                                    <motion.a href={social.url} target='_blank' rel='noopener noreferrer' {...linkProps}>
+                                        <social.icon size={20} />
+                                    </motion.a>
+                                )
+                            })}
                         </div>
                     </motion.div>
                 </div>

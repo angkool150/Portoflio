@@ -4,7 +4,7 @@ import { useTheme } from '../context/ThemeContext.jsx'
 import BigLogo from '../../Images/AngkoolLogo/Angkool-Works-and-Effects.svg'
 import { SkeletonBlock, SkeletonText } from '../Skeleton/Skeleton.jsx'
 
-function Home({ isOpen, loading = false }) {
+function Home({ isOpen, loading = false, onContactClick }) {
     const { isLight } = useTheme()
 
     if (loading) {
@@ -78,11 +78,10 @@ function Home({ isOpen, loading = false }) {
                 transition={{ duration: 0.5, delay: 0.6 }}
                 className='w-full flex flex-col sm:flex-row gap-4 justify-center items-center mt-10'
             >
-                <a href="https://www.tiktok.com/@angkool_150" target='_blank' rel='noopener noreferrer'>
-                    <button className={`${isLight ? 'bg-glass-dark' : 'bg-glass'} border-2 border-white w-40 sm:w-45 h-12 sm:h-13 rounded-3xl text-[15px] sm:text-[16px] font-medium text-white transition-all duration-300 hover:scale-105 ${isLight ? '' : 'hover:shadow-[0_0_20px_rgba(255,255,255,0.6)]'}`}>
-                        Get in Touch
-                    </button>
-                </a>
+                <button type='button' onClick={onContactClick} className={`${isLight ? 'bg-glass-dark' : 'bg-glass'} border-2 border-white w-40 sm:w-45 h-12 sm:h-13 rounded-3xl text-[15px] sm:text-[16px] font-medium text-white transition-all duration-300 hover:scale-105 ${isLight ? '' : ' hover:shadow-[0_0_20px_rgba(255,255,255,0.6)]'}`}>
+                    Get in Touch
+                </button>
+
                 <a href='#about'>
                     <button className={`${isLight ? 'bg-glass-dark' : 'bg-glass'} border-2 border-white w-40 sm:w-45 h-12 sm:h-13 rounded-3xl text-[15px] sm:text-[16px] font-medium text-white transition-all duration-300 hover:scale-105 ${isLight ? '' : 'hover:shadow-[0_0_20px_rgba(255,255,255,0.6)]'}`}>
                         About

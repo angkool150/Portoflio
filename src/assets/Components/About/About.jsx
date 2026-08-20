@@ -9,7 +9,7 @@ import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa6";
 import { useTheme } from '../context/ThemeContext.jsx'
 import { SkeletonAvatar, SkeletonCard, SkeletonText } from '../Skeleton/Skeleton.jsx'
 
-function About({ loading = false }) {
+function About({ loading = false, onContactClick }) {
     const { isLight } = useTheme()
 
     if (loading) {
@@ -155,6 +155,14 @@ function About({ loading = false }) {
                         <p className='font-semibold'>Layout Artist</p>
                         <p className='font-semibold'>3D Artist</p>
                     </div>
+
+                    <button
+                        type='button'
+                        onClick={onContactClick}
+                        className={`${isLight ? 'bg-black text-white' : 'bg-white text-black'} mt-8 w-fit rounded-3xl border-2 border-white px-6 py-3 text-sm font-semibold transition-transform duration-300 hover:scale-105`}
+                    >
+                        Get in Touch
+                    </button>
                 </motion.div>
             </div>
 
