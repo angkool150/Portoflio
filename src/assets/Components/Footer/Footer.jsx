@@ -7,6 +7,7 @@ function Footer({ onContactClick }) {
     const currentYear = new Date().getFullYear()
 
     const socialLinks = [
+
         { icon: FaGithub, url: 'https://github.com/angkool150', label: 'GitHub' },
         { icon: FaFacebook, url: 'https://www.facebook.com/jannedenzelle.tagupa', label: 'Facebook' },
         { icon: FaTiktok, url: 'https://www.tiktok.com/@angkool_150', label: 'TikTok' },
