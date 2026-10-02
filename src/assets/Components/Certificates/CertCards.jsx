@@ -13,7 +13,7 @@ function CertCards({ cert, imagePosition = '50% 50%' }) {
     return (
         <>
             <motion.div
-                className={` ${isLight ? 'bg-glass-dark' : 'bg-glass'} w-full sm:w-80 md:w-72 lg:w-80 h-50  border-2 border-white rounded-2xl overflow-hidden cursor-pointer flex-shrink-0`}
+                className={` ${isLight ? 'bg-glass-dark' : 'bg-glass'} w-full sm:w-72 md:w-500 lg:w-72 h-50 border-2 border-white rounded-2xl overflow-hidden cursor-pointer flex-shrink-0`}
                 whileHover={{
                     scale: 1.05,
                     boxShadow: isLight ? '0 25px 50px -12px rgba(0, 0, 0, 0.5)' : '0 0 30px rgba(255,255,255,0.5), 0 0 60px rgba(255,255,255,0.3)'

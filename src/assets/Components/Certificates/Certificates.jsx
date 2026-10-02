@@ -31,7 +31,7 @@ function Certificates({ loading = false }) {
                     <SkeletonText lines={2} widths={['100%', '68%']} className='mx-auto mb-10 max-w-3xl px-4' />
 
                     <div className='flex flex-wrap items-center justify-center w-full gap-4 md:gap-6 lg:gap-8 mt-10 md:mt-20'>
-                        {Array.from({ length: 4 }).map((_, index) => (
+                        {Array.from({ length: 5 }).map((_, index) => (
                             <SkeletonCard
                                 key={index}
                                 media
@@ -55,7 +55,7 @@ function Certificates({ loading = false }) {
             transition={{ duration: 0.35 }}
             className='w-full min-h-screen overflow-x-hidden py-20 md:py-10 flex flex-col items-center justify-center'
         >
-            <div className={` ${isLight ? 'text-black' : 'text-white'} px-4 mt-16 md:mt-0`}>
+            <div className={`${isLight ? 'text-black' : 'text-white'} px-4 mt-16 md:mt-0 max-w-5xl mx-auto w-full`}>
                 <div className='h-30 flex items-center justify-center'>
                     <motion.h1
                         className='font-bold text-3xl md:text-5xl lg:text-[50px] font-sans cursor-pointer text-center pb-5 '
@@ -85,7 +85,7 @@ function Certificates({ loading = false }) {
 
 
                 <div className='flex flex-wrap items-center justify-center w-full gap-4 md:gap-6 lg:gap-8 mt-10 md:mt-20'>
-                    {cert.Certificates.slice(0, 4).map((item, index) => (
+                    {cert.Certificates.map((item, index) => (
                         <CertCard
                             key={index}
                             cert={{

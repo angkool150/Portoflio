@@ -9,16 +9,19 @@ function Designs({ loading = false }) {
 
     return (
         <div id='designs' className='w-full pt-50'>
-            <motion.h1
-                className={`text-4xl md:text-8xl font-bold text-center mt-6 mb-4 ${isLight ? 'text-black' : 'text-white'}`}
-                initial={{ opacity: 0, y: -30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05, textShadow: isLight ? 'none' : '0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.6)' }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-            >
-                Designs
-            </motion.h1>
+            <div className='flex justify-center'>
+                <motion.h1
+                    className={`text-4xl md:text-8xl font-bold text-center mt-6 mb-4 ${isLight ? 'text-black' : 'text-white'}`}
+                    style={{ display: 'inline-block' }}
+                    initial={{ opacity: 0, y: -30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05, textShadow: isLight ? 'none' : '0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.6)' }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                >
+                    Designs
+                </motion.h1>
+            </div>
 
 
             <section id='pubmats'>
