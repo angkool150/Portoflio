@@ -1,0 +1,17 @@
+import React from 'react'
+import { useTheme } from '../context/ThemeContext.jsx'
+function SublimationCards({ src, alt = "image", onClick }) {
+    const { isLight } = useTheme()
+    return (
+        <div
+            className={`w-60 h-60 ${isLight ? 'bg-glass-dark' : 'bg-glass'} flex items-center justify-center border-2 border-white rounded-2xl cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.6)]`}
+            onClick={onClick}
+        >
+            <div className='w-50 h-50 overflow-hidden'>
+                <img src={src} alt={alt} className='w-full h-full object-cover' />
+            </div>
+        </div>
+    )
+}
+
+export default SublimationCards

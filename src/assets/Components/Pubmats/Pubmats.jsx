@@ -53,12 +53,12 @@ function Pubmats({ loading = false }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.35 }}
-            className='w-full min-h-screen py-10 px-4 flex flex-col justify-center items-center'
+            className='w-full py-4 px-4 flex flex-col justify-center items-center'
         >
             <div className='max-w-6xl mx-auto w-full'>
 
                 <motion.h1
-                    className={`font-bold text-3xl md:text-5xl lg:text-[50px] font-sans cursor-pointer text-center pb-5 mt-30 ${isLight ? 'text-black' : 'text-white'}`}
+                    className={`font-bold text-3xl md:text-5xl lg:text-[50px] font-sans cursor-pointer text-center pb-5 ${isLight ? 'text-black' : 'text-white'}`}
                     initial={{ textShadow: "0 0 0px rgba(255,255,255,0)" }}
                     whileHover={{
                         scale: 1.1,

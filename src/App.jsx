@@ -5,8 +5,7 @@ import Home from './assets/Components/Home/Home.jsx';
 import About from './assets/Components/About/About.jsx';
 import Skills from './assets/Components/Skills/Skills.jsx';
 import Footer from './assets/Components/Footer/Footer'
-import Pubmats from './assets/Components/Pubmats/Pubmats.jsx';
-import Sublimation from './assets/Components/Sublimation/Sublimation.jsx';
+import Designs from './assets/Components/Designs/Designs.jsx';
 import Clips from './assets/Components/Videos/Clips.jsx';
 import Certificates from './assets/Components/Certificates/Certificates.jsx'
 import ContactModal from './assets/Components/Contact/ContactModal.jsx'
@@ -42,8 +41,7 @@ function App() {
           <Home isOpen={isOpen} loading={contentLoading} onContactClick={() => setContactOpen(true)} />
           <About loading={contentLoading} onContactClick={() => setContactOpen(true)} />
           <Skills loading={contentLoading} />
-          <Pubmats loading={contentLoading} />
-          <Sublimation loading={contentLoading} />
+          <Designs loading={contentLoading} />
           <Clips loading={contentLoading} />
           <Certificates loading={contentLoading} />
         </main>

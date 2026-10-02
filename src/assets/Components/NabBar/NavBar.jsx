@@ -32,8 +32,7 @@ function NavBar({ isOpen, setIsOpen }) {
                 <a href='#home' className='cursor-pointer hover:text-gray-300 transition-colors'>Home</a>
                 <a href='#about' className='cursor-pointer hover:text-gray-300 transition-colors'>About</a>
                 <a href='#skills' className='cursor-pointer hover:text-gray-300 transition-colors'>Skills</a>
-                <a href='#pubmats' className='cursor-pointer hover:text-gray-300 transition-colors'>Pubmats</a>
-                <a href='#sublimation' className='cursor-pointer hover:text-gray-300 transition-colors'>Sublimation</a>
+                <a href='#designs' className='cursor-pointer hover:text-gray-300 transition-colors'>Designs</a>
                 <a href='#videos' className='cursor-pointer hover:text-gray-300 transition-colors'>Videos</a>
                 <a href='#certificates' className='cursor-pointer hover:text-gray-300 transition-colors'>Certificates</a>
 
@@ -85,8 +84,7 @@ function NavBar({ isOpen, setIsOpen }) {
                             <a href='#home' onClick={() => setIsOpen(false)} className='cursor-pointer hover:text-gray-300 transition-colors'>Home</a>
                             <a href='#about' onClick={() => setIsOpen(false)} className='cursor-pointer hover:text-gray-300 transition-colors'>About</a>
                             <a href='#skills' onClick={() => setIsOpen(false)} className='cursor-pointer hover:text-gray-300 transition-colors'>Skills</a>
-                            <a href='#pubmats' onClick={() => setIsOpen(false)} className='cursor-pointer hover:text-gray-300 transition-colors'>Pubmats</a>
-                            <a href='#sublimation' onClick={() => setIsOpen(false)} className='cursor-pointer hover:text-gray-300 transition-colors'>Sublimation</a>
+                            <a href='#designs' onClick={() => setIsOpen(false)} className='cursor-pointer hover:text-gray-300 transition-colors'>Designs</a>
                             <a href='#videos' onClick={() => setIsOpen(false)} className='cursor-pointer hover:text-gray-300 transition-colors'>Videos</a>
                             <a href='#certificates' onClick={() => setIsOpen(false)} className='cursor-pointer hover:text-gray-300 transition-colors'>Certificates</a>
                         </div>
